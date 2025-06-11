@@ -4,7 +4,7 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Home Screen</Text>
+      <Text style={styles.title}>LOJA</Text>
       <Button
         title="Ir para Detalhes"
         onPress={() => navigation.navigate('Details')}
@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f6f8ff',
+    backgroundColor: '#FFDBBB',
   },
   title: {
     fontSize: 24,
-    marginBottom: 20,
+    marginBottom: 10,
   },
 });

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, Alert, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LinearGradient } from 'expo-linear-gradient';
+import Background from './Background'; // Importando o componente Background
 
 export default function LoginScreen({ navigation }) {
   const [login, setLogin] = useState('');
@@ -82,59 +84,61 @@ export default function LoginScreen({ navigation }) {
   }, []);
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Login</Text>
-        
-        <TextInput
-          style={styles.input}
-          placeholder="Digite seu login"
-          value={login}
-          onChangeText={setLogin}
-        />
-        
-        <TextInput
-          style={styles.input}
-          placeholder="Digite sua senha"
-          secureTextEntry
-          value={senha}
-          onChangeText={setSenha}
-        />
-        
-        <Pressable style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Entrar</Text>
-        </Pressable>
-        
-        <Pressable style={[styles.button, styles.addButton]} onPress={AddLogin}>
-          <Text style={styles.buttonText}>Adicionar Login</Text>
-        </Pressable>
-        
-        <Text style={styles.savedLoginsTitle}>Logins Salvos:</Text>
-        
-        {loginsSalvos.length > 0 ? (
-          loginsSalvos.map((item, index) => (
-            <View key={index} style={styles.loginItem}>
-              <Pressable 
-                style={styles.loginTextContainer}
-                onPress={() => SelectLogin(item)}
-              >
-                <Text style={styles.loginText}>{item.login}</Text>
-              </Pressable>
-              
-              <Pressable 
-                style={styles.deleteButton}
-                onPress={() => DeleteLogin(index)}
-              >
-                <Text style={styles.deleteButtonText}>X</Text>
-              </Pressable>
-            </View>
-          ))
-        ) : (
-          <Text style={styles.noLoginsText}>Nenhum login salvo</Text>
-        )}
-      </View>
-    </ScrollView>
-  );
+    <Background>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Login</Text>
+  
+          <TextInput
+            style={styles.input}
+            placeholder="Digite seu login"
+            value={login}
+            onChangeText={setLogin}
+          />
+  
+          <TextInput
+            style={styles.input}
+            placeholder="Digite sua senha"
+            secureTextEntry
+            value={senha}
+            onChangeText={setSenha}
+          />
+  
+          <Pressable style={styles.button} onPress={handleLogin}>
+            <Text style={styles.buttonText}>Entrar</Text>
+          </Pressable>
+  
+          <Pressable style={[styles.button, styles.addButton]} onPress={AddLogin}>
+            <Text style={styles.buttonText}>Adicionar Login</Text>
+          </Pressable>
+  
+          <Text style={styles.savedLoginsTitle}>Logins Salvos:</Text>
+  
+          {loginsSalvos.length > 0 ? (
+            loginsSalvos.map((item, index) => (
+              <View key={index} style={styles.loginItem}>
+                <Pressable
+                  style={styles.loginTextContainer}
+                  onPress={() => SelectLogin(item)}
+                >
+                  <Text style={styles.loginText}>{item.login}</Text>
+                </Pressable>
+  
+                <Pressable
+                  style={styles.deleteButton}
+                  onPress={() => DeleteLogin(index)}
+                >
+                  <Text style={styles.deleteButtonText}>X</Text>
+                </Pressable>
+              </View>
+            ))
+          ) : (
+            <Text style={styles.noLoginsText}>Nenhum login salvo</Text>
+          )}
+        </View>
+      </ScrollView>
+      </Background>
+  ); 
 }
 
 const styles = StyleSheet.create({
@@ -145,7 +149,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
     padding: 20,
   },
   title: {
@@ -202,7 +205,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   loginText: {
-    fontSize: 16,
+    fontSize: 30,
   },
   deleteButton: {
     backgroundColor: '#dc3545',

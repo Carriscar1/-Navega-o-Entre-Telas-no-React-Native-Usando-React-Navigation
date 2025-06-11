@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fce4ec', // Rosa claro
+    backgroundColor: '#fce4ec',
   },
   title: {
     fontSize: 24,
