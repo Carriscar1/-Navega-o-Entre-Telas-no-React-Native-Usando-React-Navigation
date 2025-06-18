@@ -1,4 +1,3 @@
-// components/Background.js
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -6,9 +5,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 export default function Background({ children }) {
   return (
     <LinearGradient
-      colors={['rgba(255, 0, 0, 1)', 'rgba(252, 176, 69, 1)']}
+      colors={['#FFE4C4', '#D2B48C', '#8B4513']}
       start={{ x: 0.5, y: 0 }}
       end={{ x: 0.5, y: 1 }}
+      locations={[0.1, 0.5, 0.9]}
       style={styles.container}
     >
       {children}

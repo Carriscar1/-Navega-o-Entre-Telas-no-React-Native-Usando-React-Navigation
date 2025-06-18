@@ -13,6 +13,10 @@ export default function DetailsScreen({ navigation }) {
         title="Ir para Perfil"
         onPress={() => navigation.navigate('Profile')}
       />
+      <Button
+      title="Voltar para Login"
+      onPress={() => navigation.navigate('Login')}
+    />
     </View>
   );
 }

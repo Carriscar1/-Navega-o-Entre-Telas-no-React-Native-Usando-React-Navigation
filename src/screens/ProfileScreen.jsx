@@ -10,9 +10,9 @@ export default function ProfileScreen({ navigation }) {
         onPress={() => navigation.navigate('Home')}
       />
       <Button
-        title="Ver Detalhes"
-        onPress={() => navigation.navigate('Details')}
-      />
+      title="Voltar para Login"
+      onPress={() => navigation.navigate('Login')}
+    />
     </View>
   );
 }

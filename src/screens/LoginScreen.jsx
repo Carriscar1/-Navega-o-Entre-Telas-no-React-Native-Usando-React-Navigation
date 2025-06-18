@@ -168,14 +168,14 @@ const styles = StyleSheet.create({
   button: {
     width: '80%',
     height: 40,
-    backgroundColor: '#007bff',
+    backgroundColor: '#8B4513',
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 10,
   },
   addButton: {
-    backgroundColor: '#28a745',
+    backgroundColor: '#8B4513',
     marginBottom: 20,
   },
   buttonText: {
